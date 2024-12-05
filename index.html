@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image & PDF Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Image & PDF Converter</h1>
+      <p>Convert images to PDF and extract images from PDFs with ease!</p>
+    </header>
+
+    <main>
+      <!-- Image to PDF Section -->
+      <section class="converter-section">
+        <h2>Image to PDF</h2>
+        <input type="file" id="imageInput" accept="image/*" multiple>
+        <button class="btn" onclick="convertImagesToPdf()">Convert to PDF</button>
+        <a id="downloadPdfLink" class="btn download-btn" href="#" download="converted.pdf" style="display: none;">Download PDF</a>
+      </section>
+
+      <!-- PDF to Image Section -->
+      <section class="converter-section">
+        <h2>PDF to Images</h2>
+        <input type="file" id="pdfInput" accept="application/pdf">
+        <button class="btn" onclick="convertPdfToImages()">Convert to Images</button>
+        <div id="imageOutput" class="output"></div>
+        <button id="downloadAllImagesBtn" class="btn download-btn" style="display: none;" onclick="downloadAllImages()">Download All Images</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver/dist/FileSaver.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
